@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motion Controlled Virtual Car</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      MOTION<span class="brand-accent">RACER</span>
+    </div>
+    <div class="conn-status" id="connStatus">
+      <span class="conn-dot" id="connDot"></span>
+      <span id="connText">CONNECTING…</span>
+    </div>
+  </header>
+
+  <!-- main layout: game + side HUD -->
+  <main class="layout">
+
+    <section class="stage">
+      <canvas id="gameCanvas" width="900" height="560"></canvas>
+      <div class="voice-banner" id="voiceBanner">VOICE DETECTED</div>
+    </section>
+
+    <aside class="side-hud">
+
+      <div class="panel">
+        <div class="panel-title">TILT INPUT</div>
+        <div class="tilt-grid">
+          <div class="tilt-cell">
+            <span class="tilt-label">X</span>
+            <span class="tilt-value" id="axVal">0.00</span>
+          </div>
+          <div class="tilt-cell">
+            <span class="tilt-label">Y</span>
+            <span class="tilt-value" id="ayVal">0.00</span>
+          </div>
+          <div class="tilt-cell">
+            <span class="tilt-label">Z</span>
+            <span class="tilt-value" id="azVal">0.00</span>
+          </div>
+        </div>
+        <div class="tilt-indicator">
+          <div class="tilt-dot" id="tiltDot"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          MIC · MP34DT05
+          <span class="panel-sub" id="threshLabel">THRESH 500</span>
+        </div>
+
+        <div class="gauge-wrap">
+          <div class="gauge">
+            <svg viewBox="0 0 180 180">
+              <circle class="gauge-track" cx="90" cy="90" r="80"></circle>
+              <circle class="gauge-fill" id="gaugeFill" cx="90" cy="90" r="80"></circle>
+            </svg>
+            <div class="gauge-center">
+              <div class="gauge-value" id="gaugeValue">0</div>
+              <div class="gauge-unit">SOUND LEVEL</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-pill" id="statusPill">LISTENING…</div>
+
+        <div class="waveform" id="waveform"></div>
+        <div class="foot-row">
+          <span>0</span>
+          <span id="peakLabel">PEAK 0</span>
+          <span>2000</span>
+        </div>
+      </div>
+
+      <div class="panel controls-panel">
+        <div class="panel-title">CONTROLS</div>
+        <label class="control-row">
+          <span>Sound threshold</span>
+          <input type="range" id="threshSlider" min="50" max="1500" value="500">
+        </label>
+        <button class="btn" id="calibrateBtn">CALIBRATE ZERO TILT</button>
+      </div>
+
+    </aside>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/hud.js') }}"></script>
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
