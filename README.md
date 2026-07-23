@@ -184,6 +184,8 @@ Controlled RGB LED from a mobile phone using BLE.
 
 # 🎯 Learning Outcomes
 <img width="1600" height="900" alt="WhatsApp Image 2026-07-07 at 10 44 30 PM" src="https://github.com/user-attachments/assets/dd8493d2-da8e-44ab-bfed-d22d27c2a5b3" />
+<img width="1422" height="897" alt="WhatsApp Image 2026-07-22 at 7 25 35 PM" src="https://github.com/user-attachments/assets/97ed2f60-1e6f-489a-9765-35a01c688e3f" />
+
 
 After completing these experiments, I learned:
 
