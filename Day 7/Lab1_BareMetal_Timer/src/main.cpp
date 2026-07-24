@@ -8,6 +8,7 @@ extern "C" void TIMER3_IRQHandler(void) {
 if (NRF_TIMER3->EVENTS_COMPARE[0]) {
 NRF_TIMER3->EVENTS_COMPARE[0] = 0; // Clear the event flag
 // Toggle the LED state
+
 led_on = !led_on;
 if (led_on) {
 NRF_P0->OUTSET = (1 << LED_PIN); // Turn ON

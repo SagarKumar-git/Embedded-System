@@ -1,33 +1,45 @@
-#include <SPI.h>
+#include <Arduino_LSM9DS1.h>
+#include <Arduino_APDS9960.h>
+
+float x, y, z;
+int proximity;
+
+unsigned long lastSend = 0;
+const int sendInterval = 50; // 20 times/sec — smooth for gameplay
 
 void setup() {
-  // Start Serial Monitor
   Serial.begin(9600);
   while (!Serial);
 
-  // Initialize SPI bus
-  SPI.begin();
+  if (!IMU.begin()) {
+    Serial.println("IMU init failed!");
+    while (1);
+  }
 
-  // Configure Chip Select (CS) pin
-  pinMode(10, OUTPUT);
-  digitalWrite(10, HIGH); // Deselect slave
-
-  Serial.println("SPI Master Demo Started");
+  if (!APDS.begin()) {
+    Serial.println("APDS9960 init failed!");
+    while (1);
+  }
 }
 
 void loop() {
-  // Select slave (though none is connected)
-  digitalWrite(10, LOW);
+  if (millis() - lastSend < sendInterval) return;
+  lastSend = millis();
 
-  // Send a byte (0x42 = 'B') and read response
-  byte response = SPI.transfer(0x42);
+  if (IMU.accelerationAvailable()) {
+    IMU.readAcceleration(x, y, z);
+  }
 
-  // Deselect slave
-  digitalWrite(10, HIGH);
+  if (APDS.proximityAvailable()) {
+    proximity = APDS.readProximity();
+  }
 
-  // Print response to Serial Monitor
-  Serial.print("Received: ");
-  Serial.println(response, HEX);
-
-  delay(1000); // Wait 1 second
+  // Send as CSV: x,y,z,proximity
+  Serial.print(x, 3);
+  Serial.print(",");
+  Serial.print(y, 3);
+  Serial.print(",");
+  Serial.print(z, 3);
+  Serial.print(",");
+  Serial.println(proximity);
 }

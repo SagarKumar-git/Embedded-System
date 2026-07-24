@@ -1,12 +1,7 @@
+<<<<<<< HEAD
 # 🚀 Cyber Physical Systems Laboratory Manual
 ### Arduino Nano 33 BLE Sense | MIT ADT University
 
-![Arduino](https://img.shields.io/badge/Arduino-Nano%2033%20BLE%20Sense-00979D?style=for-the-badge&logo=arduino)
-![Platform](https://img.shields.io/badge/Platform-Arduino%20IDE-blue?style=for-the-badge)
-![Language](https://img.shields.io/badge/Language-C%2B%2B-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-Educational-green?style=for-the-badge)
-
----
 
 # 📖 About
 
@@ -213,3 +208,52 @@ B.Tech Computer Science Engineering
 MIT Art, Design and Technology University
 
 # ⭐ If you found this repository useful, don't forget to Star it.
+=======
+<div align="center">
+  <h1>🌟 Cyber-Physical Systems (CPS) Laboratory</h1>
+  
+  <p><strong>A comprehensive collection of embedded systems, IoT, and Cyber-Physical System experiments using the Arduino Nano 33 BLE Sense.</strong></p>
+
+  ![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)
+  ![C++](https://img.shields.io/badge/-C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+  ![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+  ![Flask](https://img.shields.io/badge/-Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+  ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+</div>
+
+---
+
+## 📖 Overview
+
+This repository contains the complete portfolio of experiments conducted for the Embedded Systems / Cyber-Physical Systems Laboratory course. 
+
+The experiments progress from foundational digital I/O and bare-metal programming to advanced multi-sensor data fusion, digital signal processing (FFT), and full-stack Hardware-in-the-Loop (HIL) simulations integrating the Arduino Nano 33 BLE Sense with Python web backends.
+
+## 🗂️ Lab Directory
+
+| Lab / Folder | Description | Technologies |
+|--------------|-------------|--------------|
+| 📁 [**Day 1**](Day%201/README.md) | Introduction to Digital I/O and Serial Communication. | `Arduino` |
+| 📁 [**Day 2**](Day%202/README.md) | Controlling the onboard RGB LED using Active-Low logic. | `Arduino` |
+| 📁 [**DAY 3**](DAY%203/README.md) | Accelerometer lab utilizing the LSM9DS1 IMU to detect tilt. | `Arduino` `IMU` |
+| 📁 [**DAY 4**](DAY4/README.md) | Interfacing the APDS9960 Color Sensor with an I2C Grove RGB LCD. | `Arduino` `I2C` `APDS9960` |
+| 📁 [**DAY 5**](DAY5/README.md) | Advanced Gesture and Proximity mapping using the APDS9960. | `Arduino` `I2C` `APDS9960` |
+| 📁 [**DAY 6**](DAY%206/README.md) | Full-stack AI Motion Controlled Racing Simulator (IMU + WebGL). | `C++` `Python` `Flask` `JS` |
+| 📁 [**Day 7**](Day%207/README.md) | Bare-Metal Hardware Timers and ISRs on nRF52840 via PlatformIO. | `PlatformIO` `C++` `Registers` |
+| 📁 [**DAY 8**](DAY%208/README.md) | PDM Microphone and Fast Fourier Transform (FFT) DSP for voice detection. | `Arduino` `PDM` `arduinoFFT` |
+| 📁 [**Day 9**](Day9/README.md) | Proximity Sensor event counting and state machine logic. | `Arduino` `APDS9960` |
+| 📁 [**DAY 10**](DAY%2010/README.md) | Real-Time Operating System (RTOS) multithreading using Mbed OS. | `Arduino` `Mbed OS` `RTOS` |
+| 📁 [**Day 11**](Day%2011/README.md) | Bluetooth Low Energy (BLE) Nordic UART Service (NUS) server. | `Arduino` `BLE` |
+| 📁 [**Motion Controlled Car**](motion_controlled_virtual_car/README.md) | Standalone Motion Controlled Virtual Car integration. | `C++` `Python` `Flask` `JS` |
+
+## 📄 Case Studies & Documentation
+
+- 📚 [Watchdog Timer (WDT) Case Study](WDT_Case_Study.pdf) - Detailed analysis of WDT implementations in embedded systems.
+
+---
+
+<div align="center">
+  <i>Developed by Sagar Kumar | MIT Art, Design and Technology University</i>
+</div>
+>>>>>>> 7471c2a (code)
